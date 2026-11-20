@@ -1,0 +1,766 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap');
+
+.aurelle {
+    background: #f8f6f1;
+    color: #25241f;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.aurelle-navbar {
+    height: 95px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f6f1;
+}
+
+.aurelle-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.aurelle-logo span {
+    display: block;
+    text-align: center;
+    color: #a98956;
+    font-size: 14px;
+    letter-spacing: 6px;
+}
+
+.aurelle-nav {
+    display: flex;
+    gap: 35px;
+}
+
+.aurelle-nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+.aurelle-nav a:hover {
+    color: #a98956;
+}
+
+.aurelle-book-btn {
+    padding: 15px 23px;
+    background: #a98956;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+.aurelle-book-btn:hover {
+    background: #25241f;
+}
+
+.aurelle-menu-toggle {
+    display: none;
+}
+
+/* HERO */
+
+.aurelle-hero {
+    min-height: 680px;
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
+        url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1800')
+        center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.aurelle-hero-overlay {
+    color: white;
+    max-width: 750px;
+}
+
+.aurelle-hero-overlay > p {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #e2c99e;
+}
+
+.aurelle-hero-overlay h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 85px;
+    font-weight: 400;
+    line-height: 1.05;
+    margin: 25px 0;
+}
+
+.aurelle-hero-overlay span {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.aurelle-hero-overlay a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #c5a36b;
+    padding-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* ROOMS & SUITES */
+
+.aurelle-rooms {
+    padding: 110px 8%;
+    background: #f8f6f1;
+}
+
+.aurelle-section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.aurelle-section-heading > p {
+    color: #a98956;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.aurelle-section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.aurelle-section-heading span {
+    color: #777;
+    font-size: 14px;
+}
+
+.aurelle-room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.aurelle-room-card {
+    background: #fff;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.aurelle-room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.09);
+}
+
+.aurelle-room-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.aurelle-room-card:hover img {
+    transform: scale(1.04);
+}
+
+.aurelle-room-info {
+    padding: 28px;
+}
+
+.aurelle-room-info span {
+    color: #a98956;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.aurelle-room-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    font-weight: 500;
+    margin: 14px 0 10px;
+}
+
+.aurelle-room-info p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.aurelle-room-info a {
+    color: #25241f;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-bottom: 1px solid #a98956;
+    padding-bottom: 8px;
+}
+
+/* DINING SECTION */
+
+.aurelle-dining {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    background: #25241f;
+    color: #fff;
+    min-height: 580px;
+}
+
+.aurelle-dining-image {
+    height: 580px;
+    overflow: hidden;
+}
+
+.aurelle-dining-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.aurelle-dining-image:hover img {
+    transform: scale(1.04);
+}
+
+.aurelle-dining-content {
+    padding: 60px 12%;
+}
+
+.aurelle-dining-content > p {
+    color: #c5a36b;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.aurelle-dining-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 25px 0;
+}
+
+.aurelle-dining-content span {
+    display: block;
+    color: #c5c2bb;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 35px;
+}
+
+.aurelle-dining-content a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #c5a36b;
+    padding-bottom: 10px;
+    transition: 0.3s;
+}
+
+.aurelle-dining-content a:hover {
+    color: #c5a36b;
+}
+
+/* EXPERIENCES SECTION */
+
+.aurelle-experiences {
+    padding: 110px 8%;
+    background: #eeeae1;
+}
+
+.aurelle-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.aurelle-experience-card {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.aurelle-experience-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.aurelle-experience-card:hover img {
+    transform: scale(1.08);
+}
+
+.aurelle-experience-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 35%,
+        rgba(0,0,0,0.75)
+    );
+}
+
+.aurelle-experience-card > div {
+    position: absolute;
+    bottom: 30px;
+    left: 28px;
+    right: 20px;
+    z-index: 1;
+    color: white;
+}
+
+.aurelle-experience-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.aurelle-experience-card p {
+    color: #e5e1d9;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* BOOKING SECTION */
+
+.aurelle-booking {
+    padding: 100px 8%;
+    background: #f8f6f1;
+}
+
+.aurelle-booking-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.aurelle-booking-heading p {
+    color: #a98956;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.aurelle-booking-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+.aurelle-booking-heading span {
+    color: #777;
+    font-size: 14px;
+}
+
+.aurelle-booking-form {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px;
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.05);
+}
+
+.aurelle-booking-form label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.aurelle-booking-form input,
+.aurelle-booking-form select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dedbd3;
+    background: #faf9f6;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.aurelle-booking-form input:focus,
+.aurelle-booking-form select:focus {
+    border-color: #a98956;
+}
+
+.aurelle-booking-form button {
+    grid-column: 1 / -1;
+    padding: 18px;
+    background: #a98956;
+    border: none;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.aurelle-booking-form button:hover {
+    background: #25241f;
+}
+
+/* BOOKING SUCCESS */
+
+.aurelle-booking-success {
+    max-width: 650px;
+    margin: auto;
+    padding: 55px 30px;
+    background: white;
+    text-align: center;
+}
+
+.aurelle-booking-success h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.aurelle-booking-success p {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.aurelle-booking-success button {
+    padding: 15px 25px;
+    background: #a98956;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* CONTACT SECTION */
+
+.aurelle-contact {
+    padding: 100px 8%;
+    background: #25241f;
+    color: white;
+    text-align: center;
+}
+
+.aurelle-contact-content > p {
+    color: #c5a36b;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.aurelle-contact-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 25px 0;
+}
+
+.aurelle-contact-content > span {
+    display: block;
+    color: #c5c2bb;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.aurelle-contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 55px;
+    flex-wrap: wrap;
+}
+
+.aurelle-contact-details small {
+    color: #c5a36b;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.aurelle-contact-details p {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #eee;
+}
+
+/* FOOTER */
+
+.aurelle-footer {
+    background: #171713;
+    color: #fff;
+    padding: 75px 8% 25px;
+}
+
+.aurelle-footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 60px;
+}
+
+.aurelle-footer-brand h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+.aurelle-footer-brand h2 span {
+    color: #c5a36b;
+}
+
+.aurelle-footer-brand p {
+    color: #aaa69d;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 270px;
+    margin-top: 20px;
+}
+
+.aurelle-footer-content h3 {
+    color: #c5a36b;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.aurelle-footer-content > div:not(:first-child) a {
+    display: block;
+    color: #c5c2bb;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.aurelle-footer-content a:hover {
+    color: #c5a36b;
+}
+
+.aurelle-footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #99958c;
+    font-size: 11px;
+}
+
+/* TABLET RESPONSIVENESS */
+
+@media (max-width: 992px) {
+
+    .aurelle-navbar {
+        padding: 0 4%;
+    }
+
+    .aurelle-nav {
+        gap: 18px;
+    }
+
+    .aurelle-room-grid,
+    .aurelle-experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .aurelle-dining-content {
+        padding: 40px 8%;
+    }
+
+    .aurelle-footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .aurelle-contact-details {
+        gap: 45px;
+    }
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    .aurelle-navbar {
+        height: auto;
+        min-height: 80px;
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .aurelle-logo {
+        font-size: 17px;
+    }
+
+    .aurelle-logo span {
+        font-size: 12px;
+    }
+
+    .aurelle-menu-toggle {
+        display: block;
+        order: 2;
+        background: none;
+        border: none;
+        font-size: 25px;
+        cursor: pointer;
+        color: #25241f;
+    }
+
+    .aurelle-book-btn {
+        order: 3;
+        padding: 12px;
+        font-size: 9px;
+    }
+
+    .aurelle-nav {
+        display: none;
+        order: 4;
+        flex-basis: 100%;
+        flex-direction: column;
+        gap: 22px;
+        padding: 25px 5px 10px;
+    }
+
+    .aurelle-nav.active {
+        display: flex;
+    }
+
+    .aurelle-hero {
+        min-height: 550px;
+        padding: 0 6%;
+    }
+
+    .aurelle-hero-overlay h1 {
+        font-size: 60px;
+    }
+
+    .aurelle-rooms,
+    .aurelle-experiences,
+    .aurelle-booking {
+        padding: 75px 6%;
+    }
+
+    .aurelle-section-heading h2,
+    .aurelle-booking-heading h2 {
+        font-size: 43px;
+    }
+
+    .aurelle-room-grid,
+    .aurelle-experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .aurelle-dining {
+        grid-template-columns: 1fr;
+    }
+
+    .aurelle-dining-image {
+        height: 350px;
+    }
+
+    .aurelle-dining-content {
+        padding: 65px 8%;
+    }
+
+    .aurelle-dining-content h2 {
+        font-size: 48px;
+    }
+
+    .aurelle-booking-form {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .aurelle-booking-form button {
+        grid-column: auto;
+    }
+
+    .aurelle-contact {
+        padding: 75px 6%;
+    }
+
+    .aurelle-contact-content h2 {
+        font-size: 43px;
+    }
+
+    .aurelle-contact-details {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .aurelle-footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .aurelle-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+
+    .aurelle-book-btn {
+        padding: 10px;
+        font-size: 8px;
+    }
+
+    .aurelle-hero {
+        min-height: 500px;
+    }
+
+    .aurelle-hero-overlay h1 {
+        font-size: 46px;
+    }
+
+    .aurelle-hero-overlay > p {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .aurelle-hero-overlay span {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .aurelle-section-heading h2,
+    .aurelle-booking-heading h2 {
+        font-size: 36px;
+    }
+
+    .aurelle-room-card img {
+        height: 240px;
+    }
+
+    .aurelle-experience-card {
+        height: 350px;
+    }
+
+    .aurelle-footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .aurelle-footer {
+        padding: 60px 7% 25px;
+    }
+}
