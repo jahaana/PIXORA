@@ -240,8 +240,8 @@ function RestaurantDemo() {
                     <div className="restaurant-food-card">
 
                         <img
-                            src="/images/restaurant.avif"
-                            alt="Restaurant special dish"
+                            src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=900"
+                            alt="Chef's special herb-grilled chicken"
                         />
 
                         <div>
