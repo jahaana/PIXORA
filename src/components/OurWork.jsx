@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import restaurantImage from '../../images/restaurant.avif'
+import travelImage from '../../images/travel.avif'
+import ecommerceImage from '../../images/ecommerce.avif'
 function OurWork() {
     return (
         <section className="work-section" id="work">
@@ -28,7 +31,7 @@ function OurWork() {
 
                     <div className="work-image restaurant-image">
                         <img
-                            src="/images/restaurant.avif"
+                            src={restaurantImage}
                             alt="Restaurant website preview"
                         />
                     </div>
@@ -56,7 +59,7 @@ function OurWork() {
 
                     <div className="work-image travel-image">
                         <img
-                            src="/images/travel.avif"
+                            src={travelImage}
                             alt="Manarola coastal village in Italy"
                         />
                     </div>
@@ -82,7 +85,7 @@ function OurWork() {
                 <div className="work-card">
                     <div className="work-image ecommerce-image">
                         <img
-                            src="/images/ecommerce.avif"
+                            src={ecommerceImage}
                             alt="LUNARA fashion e-commerce website"
                         />
                     </div>
@@ -96,9 +99,9 @@ function OurWork() {
                             with curated collections and interactive shopping.
                         </p>
 
-                        <a href="/demos/ecommerce" className="work-demo-btn">
+                        <Link to="/demos/ecommerce" className="work-demo-btn">
                             View Demo →
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -121,9 +124,9 @@ function OurWork() {
                             dining experiences and online booking interface.
                         </p>
 
-                        <a href="/demos/hotel" className="work-demo-btn">
+                        <Link to="/demos/hotel" className="work-demo-btn">
                             View Demo →
-                        </a>
+                        </Link>
                     </div>
 
                 </div>
