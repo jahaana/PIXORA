@@ -1,4 +1,5 @@
 import './App.css'
+import { useState, Suspense, lazy } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
@@ -8,6 +9,10 @@ import OurWork from './components/OurWork'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import DemoBackButton from './components/DemoBackButton'
+import CinematicIntro from './components/CinematicIntro'
+
+const Scene3D = lazy(() => import('./components/Scene3D'))
 
 import WebDevelopment from './pages/WebDevelopment'
 import UIUXDesign from './pages/UIUXDesign'
@@ -19,14 +24,44 @@ import EcommerceDemo from './demos/EcommerceDemo'
 import HotelDemo from './demos/HotelDemo'
 
 function Home() {
+    const [showIntro, setShowIntro] = useState(() => {
+        try {
+            return !sessionStorage.getItem('pixora_intro_seen')
+        } catch {
+            return false
+        }
+    })
+    const [introPhase, setIntroPhase] = useState(1)
+
+    const handleIntroComplete = () => {
+        setShowIntro(false)
+        try {
+            sessionStorage.setItem('pixora_intro_seen', 'true')
+        } catch {
+            // sessionStorage might be restricted
+        }
+    }
+
     return (
-        <>
-            <Hero />
-            <Services />
-            <OurWork />
-            <About />
-            <Contact />
-        </>
+        <div className="pixora-home">
+            {showIntro && (
+                <CinematicIntro
+                    phase={introPhase}
+                    setPhase={setIntroPhase}
+                    onComplete={handleIntroComplete}
+                />
+            )}
+            <Suspense fallback={null}>
+                <Scene3D introActive={showIntro} introPhase={introPhase} />
+            </Suspense>
+            <div className={`pixora-content-layer ${showIntro ? 'intro-held' : 'intro-active'}`}>
+                <Hero />
+                <Services />
+                <OurWork />
+                <About />
+                <Contact />
+            </div>
+        </div>
     )
 }
 
@@ -36,6 +71,7 @@ function App() {
     return (
         <>
             {!isDemoPage && <Navbar />}
+            {isDemoPage && <DemoBackButton />}
 
             <Routes>
                 <Route path="/" element={<Home />} />

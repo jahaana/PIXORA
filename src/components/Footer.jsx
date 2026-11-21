@@ -1,83 +1,86 @@
+import './Footer.css'
+
 function Footer() {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
+    }
+
     return (
         <footer className="footer-section">
-
             <div className="footer-container">
-
-                {/* BRAND */}
-
+                {/* Brand Column */}
                 <div className="footer-brand">
-
                     <a href="#home" className="footer-logo">
                         PIXORA<span>.</span>
                     </a>
 
                     <p>
-                        Bringing Your Business Ideas to Life.
-                        We build creative digital experiences
-                        that help businesses grow.
+                        Digital Architecture &amp; Creative Engineering Studio.
+                        We craft bespoke digital experiences that help modern businesses scale.
                     </p>
 
+                    <div className="footer-availability">
+                        <span className="footer-availability-dot"></span>
+                        <span>Available for select Q1/Q2 engagements</span>
+                    </div>
                 </div>
 
-                {/* QUICK LINKS */}
-
+                {/* Navigation Links */}
                 <div className="footer-links">
-
-                    <h3>Quick Links</h3>
-
+                    <h3>Navigation</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#work">Our Work</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#work">Selected Work</a></li>
+                        <li><a href="#about">Studio Philosophy</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
-
                 </div>
 
-                {/* SERVICES */}
-
+                {/* Capabilities */}
                 <div className="footer-links">
-
-                    <h3>Our Services</h3>
-
+                    <h3>Capabilities</h3>
                     <ul>
-                        <li>Web Development</li>
+                        <li>Web Architecture</li>
                         <li>UI/UX Design</li>
-                        <li>E-commerce Solutions</li>
-                        <li>Business Websites</li>
+                        <li>E-Commerce Solutions</li>
+                        <li>Creative Engineering</li>
                     </ul>
-
                 </div>
 
-                {/* CONTACT */}
-
+                {/* Contact Coordinates */}
                 <div className="footer-links">
-
-                    <h3>Get In Touch</h3>
-
+                    <h3>Coordinates</h3>
                     <ul>
                         <li>hello@pixora.com</li>
-                        <li>Let's build something amazing!</li>
+                        <li>Mon – Fri : 9:00 – 18:00</li>
+                        <li>Remote &amp; Global Studio</li>
                     </ul>
-
                 </div>
-
             </div>
 
+            {/* Monumental Typographic Horizon (3D Caustics Glow Behind) */}
+            <div className="footer-monumental-text" aria-hidden="true">
+                <span>PIXORA</span>
+            </div>
+
+            {/* Bottom Bar */}
             <div className="footer-bottom">
+                <p>© {new Date().getFullYear()} PIXORA. All rights reserved.</p>
 
-                <p>
-                    © 2026 PIXORA. All Rights Reserved.
-                </p>
-
-                <p>
-                    Designed & Developed with ♥ by PIXORA
-                </p>
-
+                <button
+                    type="button"
+                    className="footer-back-to-top"
+                    onClick={scrollToTop}
+                    aria-label="Back to top of page"
+                >
+                    <span>Back to Top</span>
+                    <span aria-hidden="true">↑</span>
+                </button>
             </div>
-
         </footer>
     )
 }

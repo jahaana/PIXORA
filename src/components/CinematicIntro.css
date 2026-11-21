@@ -1,0 +1,351 @@
+/* =========================================================
+   PIXORA : HYBRID LIQUID-CHROME 3D CINEMATIC INTRO
+   ========================================================= */
+
+.cinematic-intro-stage {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    pointer-events: auto;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(5, 5, 8, 0.4) 0%,
+        rgba(5, 5, 8, 0.85) 65%,
+        #050508 100%
+    );
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cinematic-intro-stage.phase-4 {
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Ambient Particle Sparks Canvas */
+.intro-sparks-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* =========================================================
+   SCENE 01: METALLIC LIGHT FILAMENT
+   ========================================================= */
+
+.intro-light-filament {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0%;
+    height: 1.5px;
+    z-index: 2;
+    pointer-events: none;
+    transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intro-light-filament.active {
+    width: 80vw;
+}
+
+.intro-light-filament.dissolved {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.filament-core {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(148, 163, 184, 0.2) 15%,
+        #ffffff 50%,
+        rgba(148, 163, 184, 0.2) 85%,
+        transparent 100%
+    );
+    box-shadow: 0 0 12px #ffffff, 0 0 28px rgba(139, 92, 246, 0.7);
+}
+
+.filament-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 40px;
+    background: radial-gradient(
+        ellipse,
+        rgba(139, 92, 246, 0.2) 0%,
+        rgba(255, 255, 255, 0.08) 35%,
+        transparent 70%
+    );
+    filter: blur(12px);
+}
+
+/* =========================================================
+   SCENE 02 & 03: DIMENSIONAL LIQUID-CHROME TYPOGRAPHY
+   ========================================================= */
+
+.intro-chrome-wrapper {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: perspective(1000px) rotateX(12deg) scale(0.92);
+    filter: blur(16px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                letter-spacing 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scene 02: Chrome Formation */
+.intro-chrome-wrapper.scene-2 {
+    opacity: 0.95;
+    transform: perspective(1000px) rotateX(0deg) scale(0.98);
+    filter: blur(0px);
+}
+
+/* Scene 03: Spatial Awakening (Gyroid emerges behind, letters reach full glory) */
+.intro-chrome-wrapper.scene-3 {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg) scale(1);
+    filter: blur(0px);
+}
+
+/* Scene 04: Cinematic Transition (Forward camera thrust + particle dissolution) */
+.intro-chrome-wrapper.scene-4 {
+    opacity: 0;
+    transform: perspective(800px) translateZ(120px) scale(1.18);
+    filter: blur(24px);
+    letter-spacing: 24px;
+}
+
+/* Chrome Eyebrow */
+.chrome-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: all 0.6s ease 0.2s;
+}
+
+.intro-chrome-wrapper.scene-2 .chrome-eyebrow,
+.intro-chrome-wrapper.scene-3 .chrome-eyebrow {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.eyebrow-line {
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+}
+
+.eyebrow-line:last-child {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.eyebrow-text {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+/* Liquid Chrome Wordmark */
+.chrome-typography-cluster {
+    position: relative;
+    display: inline-block;
+}
+
+.chrome-wordmark {
+    font-size: clamp(3.8rem, 9.5vw, 7.8rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    margin: 0;
+    user-select: none;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
+    /* Multi-stop Liquid Chrome Gradient */
+    background: linear-gradient(
+        135deg,
+        #64748b 0%,
+        #ffffff 18%,
+        #cbd5e1 32%,
+        #334155 48%,
+        #ffffff 62%,
+        #e2e8f0 78%,
+        #8b5cf6 92%,
+        #ffffff 100%
+    );
+    background-size: 260% 260%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* 3D Dimensional Bevel & Drop Shadow Depth */
+    filter: drop-shadow(0 2px 0 rgba(255, 255, 255, 0.4))
+            drop-shadow(0 6px 16px rgba(0, 0, 0, 0.8))
+            drop-shadow(0 0 35px rgba(139, 92, 246, 0.35));
+    animation: chromeShimmer 6s ease-in-out infinite alternate;
+}
+
+@keyframes chromeShimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.chrome-wordmark .char {
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.chrome-wordmark .char.dot {
+    color: #8b5cf6;
+    -webkit-text-fill-color: #8b5cf6;
+    filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.8));
+}
+
+/* Volumetric Caustic Reflection Underneath */
+.chrome-caustic-reflection {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 18px;
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(139, 92, 246, 0.25) 45%,
+        transparent 75%
+    );
+    filter: blur(8px);
+    opacity: 0.8;
+}
+
+/* Chrome Subtext Coordinates */
+.chrome-subtext {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #64748b;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.6s ease 0.3s;
+}
+
+.intro-chrome-wrapper.scene-2 .chrome-subtext,
+.intro-chrome-wrapper.scene-3 .chrome-subtext {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chrome-subtext .divider {
+    color: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================================
+   SCENE 04: SPATIAL DISSOLVE GLOW
+   ========================================================= */
+
+.intro-spatial-warp-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(139, 92, 246, 0.18) 0%,
+        rgba(255, 255, 255, 0.05) 35%,
+        transparent 70%
+    );
+    filter: blur(40px);
+    animation: warpFlash 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    pointer-events: none;
+}
+
+@keyframes warpFlash {
+    0% { opacity: 0; transform: scale(0.9); }
+    40% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0; transform: scale(1.3); }
+}
+
+/* =========================================================
+   DISCREET SKIP BUTTON (PRESERVED)
+   ========================================================= */
+
+.intro-skip-pill {
+    position: absolute;
+    top: 32px;
+    right: 36px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all 0.25s ease;
+}
+
+.intro-skip-pill kbd {
+    font-family: inherit;
+    font-size: 10px;
+    padding: 2px 6px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #cbd5e1;
+}
+
+.intro-skip-pill:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+    .intro-skip-pill {
+        top: 20px;
+        right: 20px;
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+    .cinematic-intro-stage {
+        display: none !important;
+    }
+}

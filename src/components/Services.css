@@ -1,0 +1,375 @@
+/* =========================================================
+   ATMOSPHERE 01 : SERVICES — ACT II: THE AMPHITHEATRE
+   ========================================================= */
+
+.services-amphitheatre {
+    position: relative;
+    padding: 140px 8% 120px;
+    max-width: 1440px;
+    margin: 0 auto;
+    z-index: 2;
+    background: transparent;
+    overflow: hidden;
+}
+
+/* Subtle Ambient Violet Aura Behind Amphitheatre */
+.amphitheatre-aura {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    height: 750px;
+    background: radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.08) 0%,
+        rgba(100, 116, 139, 0.03) 45%,
+        transparent 70%
+    );
+    filter: blur(75px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Stage Header with Cinematic Blur-to-Sharp Masking */
+.amphitheatre-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 80px;
+    opacity: 0;
+    transform: translateY(32px) scale(0.98);
+    filter: blur(10px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-amphitheatre.revealed .amphitheatre-header {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+}
+
+.amphitheatre-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: #a78bfa;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    backdrop-filter: blur(12px);
+}
+
+.amphitheatre-headline {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: #f8fafc;
+    margin: 0 0 20px;
+}
+
+.amphitheatre-headline span {
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.amphitheatre-subheadline {
+    font-size: 16px;
+    color: #94a3b8;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 680px;
+}
+
+/* =========================================================
+   ASYMMETRIC AMPHITHEATRE STAGE
+   Left Wing (Discipline 01) | Center Void (3D Scene) | Right Wing (02 & 03)
+   ========================================================= */
+
+.amphitheatre-stage {
+    display: grid;
+    grid-template-columns: minmax(360px, 440px) minmax(280px, 1fr) minmax(360px, 440px);
+    gap: 32px;
+    align-items: center;
+}
+
+/* Center Portal: Guaranteed Negative Space for the 3D Gyroscope */
+.amphitheatre-portal {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    position: relative;
+}
+
+.portal-sightline {
+    width: 1px;
+    height: 120px;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(139, 92, 246, 0.3) 50%,
+        transparent 100%
+    );
+    opacity: 0.6;
+}
+
+/* Left Wing: Creative Engineering Plinth */
+.amphitheatre-left-wing {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.97);
+    filter: blur(10px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.services-amphitheatre.revealed .amphitheatre-left-wing {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0px);
+}
+
+/* Right Wing: Paired Plinths */
+.amphitheatre-right-wing {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.amphitheatre-right-wing .wing-plinth:nth-child(1) {
+    opacity: 0;
+    transform: translateX(40px) scale(0.97);
+    filter: blur(10px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+
+.amphitheatre-right-wing .wing-plinth:nth-child(2) {
+    opacity: 0;
+    transform: translateX(40px) scale(0.97);
+    filter: blur(10px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+
+.services-amphitheatre.revealed .amphitheatre-right-wing .wing-plinth {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0px);
+}
+
+/* =========================================================
+   ULTRA-SHEER ARCHITECTURAL PLINTHS
+   ========================================================= */
+
+.wing-plinth {
+    position: relative;
+    background: rgba(10, 10, 18, 0.32);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 38px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.wing-plinth.primary {
+    background: linear-gradient(
+        145deg,
+        rgba(18, 18, 32, 0.45) 0%,
+        rgba(10, 10, 18, 0.28) 100%
+    );
+    border-color: rgba(139, 92, 246, 0.25);
+    min-height: 480px;
+}
+
+/* Subtle Specular Rim Light on Hover */
+.wing-plinth::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at 50% 0%,
+        rgba(139, 92, 246, 0.14) 0%,
+        transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.wing-plinth:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.45);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 24px rgba(139, 92, 246, 0.15);
+}
+
+.wing-plinth:hover::before {
+    opacity: 1;
+}
+
+.plinth-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.plinth-index {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.plinth-glyph {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #c4b5fd;
+    transition: all 0.3s ease;
+}
+
+.wing-plinth:hover .plinth-glyph {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(139, 92, 246, 0.5);
+    transform: scale(1.05);
+}
+
+.plinth-body h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 14px;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+}
+
+.plinth-body p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: #cbd5e1;
+    margin-bottom: 24px;
+}
+
+/* Technical Specification Badges */
+.plinth-specs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.spec-badge {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #a78bfa;
+    padding: 4px 10px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.22);
+    border-radius: 9999px;
+    text-transform: uppercase;
+}
+
+.plinth-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #f1f5f9;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.plinth-link span.arrow {
+    transition: transform 0.25s ease;
+}
+
+.wing-plinth:hover .plinth-link {
+    color: #c4b5fd;
+}
+
+.wing-plinth:hover .plinth-link span.arrow {
+    transform: translateX(4px);
+}
+
+/* =========================================================
+   RESPONSIVE LAYOUTS
+   ========================================================= */
+
+@media (max-width: 1140px) {
+    .amphitheatre-stage {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+
+    .amphitheatre-portal {
+        display: none;
+    }
+
+    .wing-plinth.primary {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-amphitheatre {
+        padding: 100px 6% 80px;
+    }
+
+    .amphitheatre-header {
+        margin-bottom: 50px;
+    }
+
+    .amphitheatre-stage {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .wing-plinth {
+        padding: 30px 24px;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .amphitheatre-header,
+    .amphitheatre-left-wing,
+    .amphitheatre-right-wing .wing-plinth:nth-child(1),
+    .amphitheatre-right-wing .wing-plinth:nth-child(2) {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+    }
+}

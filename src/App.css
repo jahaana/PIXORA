@@ -1,3 +1,31 @@
+/* =========================================
+   ATMOSPHERE 01 : MAIN PAGE ARCHITECTURE
+   ========================================= */
+
+.pixora-home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-void, #050508);
+    overflow-x: hidden;
+}
+
+.pixora-content-layer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pixora-content-layer.intro-held {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pixora-content-layer.intro-active {
+    opacity: 1;
+}
+
 /* NAVBAR */
 
 .navbar {

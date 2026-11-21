@@ -1,0 +1,182 @@
+/* =========================================
+   ATMOSPHERE 01 : EDITORIAL CINEMATIC HERO
+   ========================================= */
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 8% 80px;
+    z-index: 2;
+}
+
+.hero-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    backdrop-filter: blur(12px);
+}
+
+.hero-eyebrow span.sparkle {
+    color: var(--accent-violet, #8b5cf6);
+}
+
+/* Monumental Editorial Headline */
+.hero-headline {
+    font-size: clamp(2.8rem, 7.5vw, 6.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #f8fafc;
+    margin-bottom: 28px;
+    text-wrap: balance;
+}
+
+.hero-headline-accent {
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 45%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.hero-description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.7;
+    color: #94a3b8;
+    max-width: 680px;
+    margin: 0 auto 40px;
+    font-weight: 400;
+}
+
+/* Call to Actions */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+}
+
+.hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: #f8fafc;
+    color: #050508;
+    border-radius: 9999px;
+    font-size: 14.5px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-primary:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.35);
+}
+
+.hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    color: #f8fafc;
+    font-size: 14.5px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Architectural Metric Ribbon */
+.hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    width: 100%;
+    max-width: 860px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hero-metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-metric-value {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.hero-metric-label {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 120px 6% 60px;
+    }
+
+    .hero-metrics {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-top: 30px;
+    }
+
+    .hero-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}

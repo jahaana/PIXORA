@@ -1,83 +1,52 @@
+import './Hero.css'
+
 function Hero() {
     return (
         <section className="hero-section" id="home">
+            <div className="hero-inner">
+                <div className="hero-eyebrow">
+                    <span className="sparkle">✦</span>
+                    <span>CREATIVE WEB DESIGN &amp; DEVELOPMENT</span>
+                </div>
 
-            <div className="hero-content">
-
-                <p className="hero-tag">
-                    CREATIVE WEB DESIGN & DEVELOPMENT
-                </p>
-
-                <h1>
-                    We Build Digital <br />
+                <h1 className="hero-headline">
+                    We Shape Digital <br />
                     Experiences That <br />
-                    <span>Grow Your Business.</span>
+                    <span className="hero-headline-accent">Define Brands.</span>
                 </h1>
 
                 <p className="hero-description">
-                    Transform your ideas into powerful digital experiences.
-                    We design and develop modern websites that help your
-                    business stand out and grow online.
+                    PIXORA crafts bespoke digital architecture, intuitive interfaces,
+                    and high-performance web experiences engineered to help businesses
+                    stand out and grow online.
                 </p>
 
-                <div className="hero-buttons">
-                    <a href="#work" className="primary-btn">
-                        Explore Our Work →
+                <div className="hero-actions">
+                    <a href="#work" className="hero-btn-primary">
+                        Explore Selected Work ↓
                     </a>
-
-                    <a href="#contact" className="secondary-btn">
-                        Let's Talk
+                    <a href="#contact" className="hero-btn-secondary">
+                        Initiate Project ↗
                     </a>
                 </div>
 
-                <div className="hero-stats">
-                    <div>
-                        <h3>Creative</h3>
-                        <p>Design Solutions</p>
+                <div className="hero-metrics">
+                    <div className="hero-metric-item">
+                        <span className="hero-metric-value">4 Prototypes</span>
+                        <span className="hero-metric-label">Interactive Demonstrations</span>
                     </div>
 
-                    <div>
-                        <h3>Modern</h3>
-                        <p>Web Experiences</p>
+                    <div className="hero-metric-item">
+                        <span className="hero-metric-value">Bespoke Code</span>
+                        <span className="hero-metric-label">Creative Architecture</span>
+                    </div>
+
+                    <div className="hero-metric-item">
+                        <span className="hero-metric-value">High Performance</span>
+                        <span className="hero-metric-label">Engineered For Growth</span>
                     </div>
                 </div>
-
             </div>
-
-            <div className="hero-visual" aria-hidden="true">
-
-                <div className="visual-glow"></div>
-
-                <div className="visual-card">
-                    <div className="card-top">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-
-                    <div className="visual-content">
-                        <div className="visual-sidebar"></div>
-
-                        <div className="visual-main">
-                            <div className="visual-heading"></div>
-                            <div className="visual-line"></div>
-                            <div className="visual-line short"></div>
-
-                            <div className="visual-boxes">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="floating-badge">
-                    ✦ Creative Digital Solutions
-                </div>
-
-            </div>
-
         </section>
     )
 }

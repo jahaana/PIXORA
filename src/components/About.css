@@ -1,0 +1,174 @@
+/* =========================================
+   ATMOSPHERE 01 : ACT IV — THE MANIFESTO (ABOUT)
+   ========================================= */
+
+.about-section {
+    position: relative;
+    padding: 140px 8% 120px;
+    max-width: 1360px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+/* Ambient Radial Glow on Left */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: -15%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+    filter: blur(70px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.about-editorial-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-statement {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: #f8fafc;
+    margin-bottom: 28px;
+}
+
+.about-statement span {
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-narrative {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #cbd5e1;
+    margin-bottom: 44px;
+    max-width: 680px;
+}
+
+/* 3 Core Tenets */
+.manifesto-tenets {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tenet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 22px 26px;
+    background: rgba(10, 10, 18, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all 0.3s ease;
+}
+
+.tenet-item:hover {
+    border-color: rgba(139, 92, 246, 0.35);
+    background: rgba(16, 16, 28, 0.55);
+    transform: translateX(6px);
+}
+
+.tenet-index {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #a78bfa;
+    padding: 6px 10px;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.tenet-body h4 {
+    font-size: 16.5px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.tenet-body p {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Spatial Monolith Viewport (Right Column frames the 3D Core) */
+.about-spatial-window {
+    position: relative;
+    background: rgba(10, 10, 18, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 28px;
+    padding: 56px 40px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+    min-height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spatial-window-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #a78bfa;
+    text-transform: uppercase;
+}
+
+.spatial-window-body h3 {
+    font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    letter-spacing: -0.015em;
+}
+
+.spatial-window-body p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.spatial-window-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+    .about-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .about-spatial-window {
+        min-height: auto;
+        padding: 36px 28px;
+    }
+}
